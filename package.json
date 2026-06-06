@@ -1,0 +1,35 @@
+{
+  "name": "mise-tui",
+  "version": "0.1.0",
+  "description": "A lightweight TUI wrapper for mise.",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "bin": {
+    "mi": "./src/index.ts",
+    "mise-tui": "./src/index.ts"
+  },
+  "scripts": {
+    "start": "bun ./src/index.ts",
+    "check": "tsc --noEmit && bun build ./src/index.ts --target bun --outfile /tmp/mise-tui-check.js",
+    "prepublishOnly": "bun run check"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.5.2"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "packageManager": "bun@1.3.14",
+  "keywords": [
+    "mise",
+    "tui",
+    "cli",
+    "bun"
+  ],
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "typescript": "^6.0.3"
+  }
+}
