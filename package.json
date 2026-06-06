@@ -2,6 +2,10 @@
   "name": "mise-tui",
   "version": "0.1.2",
   "description": "A lightweight TUI wrapper for mise.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liao666brant/mise-tui.git"
+  },
   "type": "module",
   "files": [
     "dist"

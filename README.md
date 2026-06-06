@@ -81,6 +81,25 @@ mise use node@<version>
 bun run check
 ```
 
+## 发布
+
+项目已配置 GitHub Actions + npm Trusted Publishing。npm 包设置中 Trusted Publisher 应填写：
+
+```text
+Organization or user: liao666brant
+Repository: mise-tui
+Workflow filename: publish.yml
+Allowed actions: npm publish
+```
+
+发版时创建并推送 `v*` tag：
+
+```bash
+npm version patch
+git push
+git push --tags
+```
+
 ## 当前功能
 
 - 查看已安装工具
