@@ -32,7 +32,7 @@ mt i node
 mt use node
 ```
 
-运行环境需要提前安装 Bun 和 mise。默认始终使用 Bun；如需显式使用 Node.js，可传入 `--node`。
+运行环境需要提前安装 mise。默认会优先转交 Bun 运行；如需显式使用 Node.js，可传入 `--node`。
 
 Windows 上请确认 `bun`、`mise` 和 npm 全局 bin 目录都在 `PATH` 中：
 

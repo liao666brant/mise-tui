@@ -1,5 +1,6 @@
 #!/usr/bin/env bun
 
+import { spawnSync } from "node:child_process";
 import { runCliCommand } from "./commands/cli";
 import { hasMise, MISE_BIN } from "./core/mise";
 import { runTui } from "./ui/tui";
@@ -18,8 +19,16 @@ function ensureRuntime(nodeRequested: boolean): void {
     return;
   }
 
-  console.error("请使用 Bun 运行，或传入 --node 显式使用 Node.js 运行。");
-  process.exit(1);
+  const result = spawnSync("bun", [process.argv[1] ?? "", ...process.argv.slice(2)], {
+    stdio: "inherit",
+  });
+
+  if (result.error) {
+    console.error("找不到 Bun。请安装 Bun，或传入 --node 显式使用 Node.js 运行。");
+    process.exit(1);
+  }
+
+  process.exit(result.status ?? 1);
 }
 
 async function main(): Promise<void> {

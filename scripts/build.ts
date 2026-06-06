@@ -14,6 +14,6 @@ await Bun.write(buildEntry, entrySource.replace(/^#!.*\n/, "#!/usr/bin/env node\
 await $`bun build ${buildEntry} --target node --format cjs --outfile ${outputFile}`;
 
 const outputSource = await Bun.file(outputFile).text();
-await Bun.write(outputFile, outputSource.replace(/^#!.*\n/, "#!/usr/bin/env bun\n"));
+await Bun.write(outputFile, outputSource.replace(/^#!.*\n/, "#!/usr/bin/env node\n"));
 
 await rm(buildSourceDir, { force: true, recursive: true });
