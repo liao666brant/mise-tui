@@ -140,7 +140,7 @@ async function selectInstalledVersion(tool: string): Promise<string> {
   const versionStatuses = getVersionStatuses(tool);
 
   if (versions.length === 0) {
-    throw new Error(`${tool} 没有已安装版本。请先执行 mi i ${tool} 安装版本。`);
+    throw new Error(`${tool} 没有已安装版本。请先执行 mt i ${tool} 安装版本。`);
   }
 
   console.log(`未提供 ${tool} 版本，请选择要使用的已安装版本。`);

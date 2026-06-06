@@ -26,12 +26,20 @@ npm install -g mise-tui
 安装后可直接使用：
 
 ```bash
-mi
-mi i node
-mi use node
+mt
+mt i node
+mt use node
 ```
 
 运行环境需要提前安装 Bun 和 mise。
+
+Windows 上请确认 `bun`、`mise` 和 npm 全局 bin 目录都在 `PATH` 中：
+
+```powershell
+where.exe bun
+where.exe mise
+where.exe mt
+```
 
 ## 启动
 
@@ -50,7 +58,7 @@ bun start
 缺少版本时会进入可搜索版本选择：
 
 ```bash
-mi i node -g
+mt i node -g
 ```
 
 版本选择器每页显示 15 个版本，支持输入过滤、`←/→` 翻页、`↑/↓` 选择；已安装版本显示青色，项目使用中的版本显示黄色，全局使用中的版本显示紫色。
@@ -61,7 +69,7 @@ mi i node -g
 mise use --global node@<version>
 ```
 
-`mi use node` 会只列出本机已安装的 node 版本，选择后执行：
+`mt use node` 会只列出本机已安装的 node 版本，选择后执行：
 
 ```bash
 mise use node@<version>
