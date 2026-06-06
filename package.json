@@ -7,8 +7,8 @@
     "dist"
   ],
   "bin": {
-    "mt": "./dist/index.js",
-    "mise-tui": "./dist/index.js"
+    "mt": "dist/index.js",
+    "mise-tui": "dist/index.js"
   },
   "scripts": {
     "start": "bun ./src/index.ts",
